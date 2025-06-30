@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nono Ravioli - Home</title>
+    <link rel="icon" href="./img/nonoravioli.ico">
+    <title>Tienda de Pastas Nono Ravioli</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Condensed:wght@100..900&display=swap"
+        rel="stylesheet">
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="scriptPost.js"></script>
+</head>
+
+<body class="tienda">
+    <header>
+        <div class="logo-nombre">
+            <div class="logo">
+                <img src="./img/NonoRavioli.png">
+            </div>
+
+            <div class="titulo">
+                <h1>Nono Ravioli</h1>
+                <h2>Fabrica de Pastas Artesanales</h2>
+            </div>
+        </div>
+
+        <div class="container ">
+            <nav class="nav">
+                <ul class="lista-horiz">
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./nuestraHistoria.html">Nuestra Historia</a></li>
+                    <li><a href="./nuestrosProductos.html">Nuestros Productos</a></li>
+                    <li><a href="#">Tienda</a></li>
+
+                    <div class="dropdown">
+                        <a class="btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Sucursales
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="./sucursales/rosario.html">Rosario</a></li>
+                            <li><a class="dropdown-item" href="./sucursales/san_lorenzo.html">San Lorenzo</a></li>
+                            <li><a class="dropdown-item" href="./sucursales/timbues.html">Timbues</a></li>
+                        </ul>
+                    </div>
+                    <li><a href="#">¿Queres trabajar con nosotros?</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="productos-flex">
+            <div>
+                <h2 class="tipo-pasta">Pastas Secas</h2>
+
+                <div class="producto-tienda cuadro">
+                    <h3>Tallarines</h3>
+                    <p>Rellenos de ricota y nuez</p>
+                    <strong>$1500/kg</strong>
+                    <button class="btn btn-primary agregar-carrito">Sumar al carrito</button>
+                </div>
+
+                <div class="producto-tienda cuadro">
+                    <h3>Fideos moño</h3>
+                    <p>Con harina 000 y huevo</p>
+                    <strong>$1200/kg</strong>
+                    <button class="btn btn-primary agregar-carrito">Sumar al carrito</button>
+                </div>
+                
+                <div class="producto-tienda cuadro">
+                    <h3>Fideos Tirabuzon</h3>
+                    <p>Jamón, queso y albahaca</p>
+                    <strong>$1600/kg</strong>
+                    <button class="btn btn-primary agregar-carrito">Sumar al carrito</button>
+                </div>
+            </div>
+
+
+            <div>
+                <h2 class="tipo-pasta">Pastas rellenas</h2>
+                <div class="producto-tienda cuadro">
+                    <h3>Ravioles</h3>
+                    <p>Jamón, queso y albahaca</p>
+                    <strong>$1600/kg</strong>
+                    <button class="btn btn-primary agregar-carrito">Sumar al carrito</button>
+                </div>
+
+                <div class="producto-tienda cuadro">
+                    <h3>Sorrentinos</h3>
+                    <p>Jamón, queso y albahaca</p>
+                    <strong>$1600/kg</strong>
+                    <button class="btn btn-primary agregar-carrito">Sumar al carrito</button>
+                </div>
+
+                <div class="producto-tienda cuadro">
+                    <h3>Canelones</h3>
+                    <p>Jamón, queso y albahaca</p>
+                    <strong>$1600/kg</strong>
+                    <button class="btn btn-primary agregar-carrito">Sumar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="copyright">
+            <p>Todos los derechos reservados de &copy;NonoRavioli.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

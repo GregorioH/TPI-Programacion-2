@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nono Ravioli - Home</title>
+    <link rel="icon" href="./img/nonoravioli.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Condensed:wght@100..900&display=swap"
+        rel="stylesheet">
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./scriptPost.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-nombre">
+            <div class="logo">
+                <img src="./img/NonoRavioli.png">
+            </div>
+
+            <div class="titulo">
+                <h1>Nono Ravioli</h1>
+                <h2>Fabrica de Pastas Artesanales</h2>
+            </div>
+        </div>
+
+        <div class="container ">
+            <nav class="nav">
+                <ul class="lista-horiz">
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./nuestraHistoria.html">Nuestra Historia</a></li>
+                    <li><a href="./nuestrosProductos.html">Nuestros Productos</a></li>
+                    <li><a href="./tienda">Tienda</a></li>
+
+                    <div class="dropdown">
+                        <a class="btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Sucursales
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="./sucursales/rosario.html">Rosario</a></li>
+                            <li><a class="dropdown-item" href="./sucursales/san_lorenzo.html">San Lorenzo</a></li>
+                            <li><a class="dropdown-item" href="./sucursales/timbues.html">Timbues</a></li>
+                        </ul>
+                    </div>
+                    <li><a href="#">¿Queres trabajar con nosotros?</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- <div class="container mt-5"> -->
+
+    <form action="#" class="form" id="formPostulacion">
+        <div class="overlay-text">
+            <div class="nombre-apellido">
+
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre"
+                        autocomplete="off" size="50">
+                    <div class="error" id="nom-error"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Apellido"
+                        autocomplete="off" size="50">
+                    <div class="error" id="ape-error"></div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="genero" class="form-label">Género</label>
+                <select class="form-select" id="genero" aria-label="Seleccionar genero">
+                    <option value="" selected disabled hidden>Selecciona una opción</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro género</option>
+                    <option value="prefiero_no_decirlo">Prefiero no decirlo</option>
+                    <option value="no_identificado">No me identifico con ningún género</option>
+                </select>
+                <div class="error" id="genero-error"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="metodoContacto" class="radio-label">Método de contacto</label> <br>
+                <label for="metodoT">
+                    <input type="radio" name="metodoContacto" id="metodoT" value="telefono" class="radio-control"
+                        required>
+                    Teléfono
+                </label>
+
+                <label for="metodoM">
+                    <input type="radio" name="metodoContacto" id="metodoM" value="mail" class="radio-control">
+                    Mail
+                </label>
+
+                <div class="error" id="metodo-error"></div>
+            </div>
+
+            <div class="mb-3" id="divTel" hidden>
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="tel" name="telefono" class="form-control" id="telefono" placeholder="(+54) 11 1234567890"
+                    autocomplete="off">
+                <div class="error" id="tel-error"></div>
+            </div>
+
+            <div class="mb-3" id="divMail" hidden>
+                <label for="mail" class="form-label">Mail</label>
+                <input type="email" name="mail" class="form-control" id="mail" placeholder="name@dominio.com"
+                    autocomplete="off">
+                <div class="error" id="mail-error"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="solicitudArea" class="form-label">Solicitud</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" autocomplete="off"
+                    placeholder="Días para contarnos, horarios de contacto, etc."></textarea>
+                <div class="error" id="soli-error"></div>
+            </div>
+
+            <div>
+                <label for="myfile">Envíanos tu CV:</label>
+                <input type="file" id="myfile" name="myfile" value="Archivo" accept=".jpg, .pdf">
+            </div>
+            <div class="error" id="archivo-error"></div>
+
+            <button type="submit">Enviar Solicitud</button>
+            <div id="confirmacion" class="hidden">
+                <h3>Solicitud enviada correctamente</h3>
+                <div id="solicitud-exito"></div>
+            </div>
+        </div>
+    </form>
+    </div>
+
+    <footer class="footer">
+        <div class="copyright">
+            <p>Todos los derechos reservados de &copy;NonoRavioli.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
