@@ -1,4 +1,4 @@
-<h1 align="center"># TPI Programación 2</h1>
+<h1 align="center">TPI Programación 2</h1>
 
 <p align="center">
   <img src="img/NonoRavioli.png" alt="Logo de Nono Ravioli" width="300">
