@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nono Ravioli - Home</title>
-    <link rel="icon" href="./img/nonoravioli.ico">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="icon" href="../img/nonoravioli.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Condensed:wght@100..900&display=swap"
         rel="stylesheet">
-    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <script src="./scriptPost.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 
 <body>
-    <header>
+<header>
         <div class="logo-nombre">
             <div class="logo">
-                <img src="./img/NonoRavioli.png">
+                <img src="../img/NonoRavioli.png">
             </div>
 
             <div class="titulo">
@@ -35,20 +35,8 @@
                     <li><a href="./index.html">Inicio</a></li>
                     <li><a href="./nuestraHistoria.html">Nuestra Historia</a></li>
                     <li><a href="./nuestrosProductos.html">Nuestros Productos</a></li>
-                    <li><a href="./tienda">Tienda</a></li>
-
-                    <div class="dropdown">
-                        <a class="btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Sucursales
-                        </a>
-
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="./sucursales/rosario.html">Rosario</a></li>
-                            <li><a class="dropdown-item" href="./sucursales/san_lorenzo.html">San Lorenzo</a></li>
-                            <li><a class="dropdown-item" href="./sucursales/timbues.html">Timbues</a></li>
-                        </ul>
-                    </div>
+                    <li><a href="./tienda.html">Tienda</a></li>
+                    <li><a href="./sucursales.html">Sucursales</a></li>
                     <li><a href="#">¿Queres trabajar con nosotros?</a></li>
                 </ul>
             </nav>
@@ -91,8 +79,7 @@
             <div class="mb-3">
                 <label for="metodoContacto" class="radio-label">Método de contacto</label> <br>
                 <label for="metodoT">
-                    <input type="radio" name="metodoContacto" id="metodoT" value="telefono" class="radio-control"
-                        required>
+                    <input type="radio" name="metodoContacto" id="metodoT" value="telefono" class="radio-control">
                     Teléfono
                 </label>
 
@@ -145,7 +132,7 @@
             <p>Todos los derechos reservados de &copy;NonoRavioli.</p>
         </div>
     </footer>
-
+    <script src="../static/scriptPost.js"></script>
 </body>
 
 </html>
