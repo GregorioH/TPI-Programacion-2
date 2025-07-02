@@ -1,9 +1,7 @@
 from flask import Flask
-from flask import render_template
-
-from flask import  render_template, request, redirect, url_for,jsonify
+from flask import  render_template, request, url_for
 from werkzeug.utils import secure_filename
-import os,mysql.connector
+import os, mysql.connector
     
 
 app=Flask(__name__)
@@ -34,33 +32,22 @@ def mostrar_tienda():
 def mostrar_sucursales():
     return render_template('sucursales.html')
 
-
-
-
-
 @app.route('/postulacion', methods=['POST', 'GET'])
 def mostrar_formulario():
     if request.method == 'POST':
         return guardar_postulacion()
     return render_template('postulacion.html')
 
-'''def formulario_postulacion():
-    if request.method == 'POST':
-       
-        return jsonify({'msg': 'Postulación guardada'})
-    else:
-        return render_template('postulacion.html')'''
-
-
 
 
 def guardar_postulacion():
-    nombre = request.form.get('nombre', '') 
-    apellido = request.form.get('apellido', '')
-    genero = request.form.get('genero', '')
-    telefono = request.form.get('telefono', '')
-    mail = request.form.get('mail', '')
-    solicitud = request.form.get('solicitud', '')
+    nombre = request.form.get['nombre', '']
+    apellido = request.form.get['apellido', '']
+    genero = request.form.get['genero', '']
+    telefono = request.form.get['telefono', '']
+    mail = request.form.get['mail', '']
+    solicitud = request.form.get['solicitud', '']
+    archivo=request.form.get['archivo', '']
 
     archivo = request.files.get('myfile')
     archivo_nombre = ''
@@ -69,27 +56,27 @@ def guardar_postulacion():
         archivo.save(os.path.join(app.config['UPLOAD_FOLDER'], archivo_nombre))
     else:
         return "Archivo no permitido", 400
-    print("Datos recibidos:")
-    print(nombre, apellido, genero, telefono, mail, solicitud, archivo_nombre)
-    # Guardar en DB
+
+ 
     try:
         conn = mysql.connector.connect(
             host='localhost',
             port=3306,
             user='root',
             password='root',
-            database='nono_ravioli'
+            database='nono_ravioli.sql'
         )
         cur = conn.cursor()
         cur.execute("""
             INSERT INTO postulacion (nombre, apellido, genero, telefono, mail, solicitud,archivo)
             VALUES (%s, %s, %s, %s, %s, %s)
-        """, (nombre, apellido, genero, telefono, mail, solicitud,archivo_nombre))
+        """, (nombre, apellido, genero, telefono, mail, solicitud,archivo))
         conn.commit()
         cur.close()
         conn.close()
         print("Postulación guardada con éxito")
         return render_template('postulacionOk.html')
+    
     except mysql.connector.Error as err:
         print("Error al insertar:", err)
         return f"Ocurrió un error con la base de datos: {err}"
@@ -100,11 +87,6 @@ def guardar_postulacion():
 
 
 
-# @app.route('/subir_producto', methods=['POST'])
-# def subir_producto():
- 
-   
-
 if __name__=='__main__':
-    app.run(debug=False)
+    app.run(debug=True)
 

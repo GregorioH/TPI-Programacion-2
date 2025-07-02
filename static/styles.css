@@ -239,8 +239,8 @@ header {
 
 /*NUESTRA HISTORIA*/
 .imagenNosotros {
-    /* background-image: url("/static/img/inmigrante.jpg"); */
-    background-image: url("img/inmigrante.jpg");
+    background-image: url("/static/img/inmigrante.jpg");
+    background-image: url("./img/inmigrante.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -255,12 +255,12 @@ header {
     display: block;
     opacity: 0.5;
 }
-
+    
 .nosotros {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
     color: #444444;
     font-size: 2rem;
     font-family: pacifico;
