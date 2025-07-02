@@ -50,9 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const divTel = document.getElementById('divTel');
     const divMail = document.getElementById('divMail');
 
-
-
-
     function habilitarTelefonoMail() {
         divTel.hidden = !metodoT.checked;
         divMail.hidden = !metodoM.checked;
@@ -70,12 +67,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     habilitarTelefonoMail();
 
+    function validarMetodo() {
+        const errorMet = document.getElementById('metodo-error');
+        if (!metodoT.checked && !metodoM.checked) {
+            errorMet.textContent = "Debe seleccionar un método de contacto"
+            return false
+        } else {
+            errorMet.textContent = ''
+            return true
+        }
+
+    }
+
     function validarTelefono() {
         const telefono = document.getElementById('telefono').value.trim();
         const errorTel = document.getElementById('tel-error');
         if (!divTel.hidden) {
             if (telefono === '') {
-                errorMail.textContent = "Debe ingresar un número de teléfono";
+                errorTel.textContent = "Debe ingresar un número de teléfono";
                 return false;
             } else if (!regexTel.test(telefono)) {
                 errorTel.textContent = "Ingrese un número de teléfono válido";
@@ -161,12 +170,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const validNombre = validarNombre();
         const validApellido = validarApellido();
-        const validMail = validarMail();
+        const validMet = validarMetodo();
         const validTel = validarTelefono();
+        const validMail = validarMail();
         const validGenero = validarGenero();
         const validArchivo = validarArchivo();
 
-        if (validNombre && validApellido && (validTel || validMail) && validGenero && validArchivo) {
+        if (validNombre && validApellido && validMet && (validTel || validMail) && validGenero && validArchivo) {
             alert('Formulario enviado con éxito');
             console.log('Formulario enviado con éxito')
         }

@@ -4,16 +4,10 @@ from flask_mysqldb import MySQL
 
 from flask import  render_template, request, redirect, url_for,jsonify
 from werkzeug.utils import secure_filename
-import os
+import os,mysql.connector
+    
 
 app=Flask(__name__)
-
-mysql=MySQL()
-app.config['MySQL_DATABASE_HOST']='localhost'
-app.config['MySQL_DATABASE_USER']='root'
-app.config['MySQL_DATABASE_PASSWORD']='localhost'
-app.config['MySQL_DATABASE_DB']='sistema'
-mysql.init_app(app)
 
 
 UPLOAD_FOLDER = 'img'
@@ -27,29 +21,29 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route('/')
 def index():
+    
 
-    sql=""
-    conn=mysql.connect()
-    cursor=conn.cursor()
-    cursor.execute(sql)
-    conn.commit()
     return render_template('index.html')
 
 
-@app.route('/postulacion', methods=['POST'])
+@app.route('/postulacion', methods=['POST', 'GET'])
 
 def mostrar_formulario():
+    if request.method == 'POST':
+        return guardar_postulacion()
     return render_template('postulacion.html')
 
-def formulario_postulacion():
+'''def formulario_postulacion():
     if request.method == 'POST':
        
         return jsonify({'msg': 'Postulación guardada'})
     else:
-        return render_template('postulacion.html')
+        return render_template('postulacion.html')'''
     
 
 def guardar_postulacion():
+    
+      
     nombre = request.form['nombre'] 
     apellido = request.form['apellido']
     genero = request.form['genero']
@@ -63,19 +57,32 @@ def guardar_postulacion():
     if archivo:
         archivo_nombre = secure_filename(archivo.filename)
         archivo.save(os.path.join(app.config['UPLOAD_FOLDER'], archivo_nombre))
-
-    conn = mysql.connect()
-
+    
+    
+    conn = mysql.connector.connect(
+        host='localhost',
+        user='root',
+        password='root',
+        database='nono_ravioli')
     cur = conn.cursor()
     cur.execute("""
-        INSERT INTO postulaciones (nombre, apellido, genero, metodo_contacto, telefono, mail, solicitud, cv_nombre_archivo)
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-    """, (nombre, apellido, genero, metodo, telefono, mail, solicitud, archivo_nombre))
+        INSERT INTO postulacion (nombre, apellido, genero, telefono, mail, texto)
+        VALUES (%s, %s, %s, %s, %s, %s)
+    """, (nombre, apellido, genero, telefono, mail, solicitud))
     conn.commit()
     cur.close()
     conn.close()
+    return render_template('postulacionOk.html')
 
-    return jsonify({'status': 'ok', 'msg': 'Postulación guardada'})
+
+
+
+
+
+
+
+
+
 
 @app.route('/tienda')
 def tienda():
@@ -83,16 +90,12 @@ def tienda():
     return render_template('tienda.html')
 
 
-@app.route('/subir_producto', methods=['POST'])
-def subir_producto():
-
+# @app.route('/subir_producto', methods=['POST'])
+# def subir_producto():
+ 
    
 
 
-
-
-
-    if __name__=='__main__':
-     app.run(debug=True)
-
+if __name__=='__main__':
+    app.run(debug=True)
 

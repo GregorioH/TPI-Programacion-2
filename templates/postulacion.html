@@ -37,7 +37,7 @@
                     <li><a href="./nuestrosProductos.html">Nuestros Productos</a></li>
                     <li><a href="./tienda.html">Tienda</a></li>
                     <li><a href="./sucursales.html">Sucursales</a></li>
-                    <li><a href="#">¿Queres trabajar con nosotros?</a></li>
+                    <li><a href="{{ url_for('mostrar_formulario') }}">¿Queres trabajar con nosotros?</a></li>
                 </ul>
             </nav>
         </div>
@@ -45,7 +45,7 @@
 
     <!-- <div class="container mt-5"> -->
 
-    <form action="#" class="form" id="formPostulacion">
+    <form action="/postulacion" method="post" enctype="multipart/form-data" class="form" id="formPostulacion">
         <div class="overlay-text">
             <div class="nombre-apellido">
 
@@ -87,6 +87,7 @@
                     <input type="radio" name="metodoContacto" id="metodoM" value="mail" class="radio-control">
                     Mail
                 </label>
+                
 
                 <div class="error" id="metodo-error"></div>
             </div>
