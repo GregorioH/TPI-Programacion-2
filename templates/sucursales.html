@@ -4,23 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nono Ravioli - Home</title>
-    <link rel="stylesheet" href="../styles/normalize.css">
-    <link rel="icon" href="../img/nonoravioli.ico">
+    <title>Nono Ravioli - Sucursales</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/normalize.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/nonoravioli.ico') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Condensed:wght@100..900&display=swap"
         rel="stylesheet">
-    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/styles.css">
+    <script src="{{url_for('static', filename = 'scriptPost.js')}}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link href="{{url_for('static', filename = 'styles.css')}}" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="logo-nombre">
             <div class="logo">
-                <img src="../img/NonoRavioli.png">
+                <img src="{{ url_for('static', filename='img/NonoRavioli.png') }}">
             </div>
 
             <div class="titulo">
@@ -29,15 +30,15 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container ">
             <nav class="nav">
                 <ul class="lista-horiz">
-                    <li><a href="./index.html">Inicio</a></li>
-                    <li><a href="./nuestraHistoria.html">Nuestra Historia</a></li>
-                    <li><a href="./nuestrosProductos.html">Nuestros Productos</a></li>
-                    <li><a href="./tienda.html">Tienda</a></li>
-                    <li><a href="#">Sucursales</a></li>
-                    <li><a href="./postulacion.html">¿Queres trabajar con nosotros?</a></li>
+                    <li><a href="{{url_for('mostrar_index') }}">Inicio</a></li>
+                    <li><a href="{{url_for('mostrar_historia') }}">Nuestra Historia</a></li>
+                    <li><a href="{{url_for('mostrar_productos') }}">Nuestros Productos</a></li>
+                    <li><a href="{{url_for('mostrar_tienda') }}">Tienda</a></li>
+                    <li><a href="{{url_for('mostrar_sucursales') }}">Sucursales</a></li>
+                    <li><a href="{{url_for('mostrar_formulario') }}">¿Queres trabajar con nosotros?</a></li>
                 </ul>
             </nav>
         </div>
@@ -66,11 +67,10 @@
                             <p>9 de Julio 551</p>
                             <p>Rosario - Santa Fe</p>
                             <p>Teléfono: 341 4589822</p>
-                            <img src="../img/whatsapp.svg" alt="Whatsapp"> 9 341 4589822</img><br>
-                            <img src="../img/instagram.svg" alt="Instagram"> @nonoravioli</img>
+                            <img src="{{url_for('static', filename = 'img/whatsapp.svg')}}" alt="Whatsapp"> 9 341 4589822</img><br>
+                            <img src="{{url_for('static', filename = 'img/instagram.svg')}}" alt="Instagram"> nonoravioli</img>
                             <p>
-                                Email: <a
-                                href="mailto:sucursalcentro@nonoravioli.com.ar?Subject=Pedido%20Sucursal%20Centro">sucursalcentro@nonoravioli.com.ar</a>
+                                Email: <a href="mailto:sucursalcentro@nonoravioli.com.ar?Subject=Pedido%20Sucursal%20Centro">sucursalcentro@nonoravioli.com.ar</a>
                             </p>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                             <p>Av. San Martin 4410</p>
                             <p>Rosario - Santa Fe</p>
                             <p>Teléfono: 341 4589549</p>
-                            <img src="../img/whatsapp.svg" alt="whatsapp"> 9 341 4589822
+                            <img src="{{url_for('static', filename = 'img/whatsapp.svg')}}" alt="whatsapp"> 9 341 4589822
                             <p>
                                 Email: <a
                                 href="mailto:sucursalsur@nonoravioli.com.ar?Subject=Pedido%20Sucursal%20Sur">sucursalsur@nonoravioli.com.ar</a>
@@ -115,7 +115,7 @@
                             <p>Sarmiento 1703</p>
                             <p>Casilda - Santa Fe</p>
                             <p>Teléfono: 3464 435742</p>
-                            <img src="../img/whatsapp.svg" alt="whatsapp"> 9 3464 435742
+                            <img src="{{url_for('static', filename = 'img/whatsapp.svg')}}" alt="whatsapp"> 9 3464 435742
                         </div>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
                             <p>Salta 758</p>
                             <p>San Lorenzo - Santa Fe</p>
                             <p>Teléfono: 3676 238795</p>
-                            <img src="../img/whatsapp.svg" alt="whatsapp"> 9 3676 238795
+                            <img src="{{url_for('static', filename = 'img/whatsapp.svg')}}" alt="whatsapp"> 9 3676 238795
                         </div>
                     </div>
                 </div>
@@ -155,7 +155,7 @@
                             <p>9 de Julio 112</p>
                             <p>Rosario - Santa Fe</p>
                             <p>Teléfono: 3402 356568</p>
-                            <img src="../img/whatsapp.svg" alt="whatsapp"> 9 3402 356568
+                            <img src="{{url_for('static', filename = 'img/whatsapp.svg')}}" alt="whatsapp"> 9 3402 356568
                         </div>
                     </div>
                 </div>

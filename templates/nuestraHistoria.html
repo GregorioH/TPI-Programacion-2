@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nono Ravioli - Home</title>
-    <link rel="stylesheet" href="../styles/normalize.css">
-    <link rel="icon" href="../img/nonoravioli.ico">
+    <title>Nono Ravioli - Nuestra Historia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/normalize.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/nonoravioli.ico') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Condensed:wght@100..900&display=swap"
         rel="stylesheet">
-    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/styles.css">
+        <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+        <script src="{{ url_for('static', filename='scriptPost.js') }}"></script>
 </head>
 <body>
         <header>
         <div class="logo-nombre">
             <div class="logo">
-                <img src="../img/NonoRavioli.png">
+                <img src="{{ url_for('static', filename='img/NonoRavioli.png') }}">
             </div>
 
             <div class="titulo">
@@ -30,12 +31,12 @@
         <div class="container ">
             <nav class="nav">
                 <ul class="lista-horiz">
-                    <li><a href="./index.html">Inicio</a></li>
-                    <li><a href="#">Nuestra Historia</a></li>
-                    <li><a href="./nuestrosProductos.html">Nuestros Productos</a></li>
-                    <li><a href="./tienda.html">Tienda</a></li>
-                    <li><a href="./sucursales.html">Sucursales</a></li>
-                    <li><a href="./postulacion.html">¿Queres trabajar con nosotros?</a></li>
+                    <li><a href="{{url_for('mostrar_index') }}">Inicio</a></li>
+                    <li><a href="{{url_for('mostrar_historia') }}">Nuestra Historia</a></li>
+                    <li><a href="{{url_for('mostrar_productos') }}">Nuestros Productos</a></li>
+                    <li><a href="{{url_for('mostrar_tienda') }}">Tienda</a></li>
+                    <li><a href="{{url_for('mostrar_sucursales') }}">Sucursales</a></li>
+                    <li><a href="{{url_for('mostrar_formulario') }}">¿Queres trabajar con nosotros?</a></li>
                 </ul>
             </nav>
         </div>
@@ -43,7 +44,7 @@
 
     <div class="container mt-5">
             <div class="imagenNosotros">
-                <img src="../img/inmigrante.jpg" alt="ImagenFondo">
+               <!-- <img src="{{ url_for('static', filename='img/inmigrante.jpg') }} alt="ImagenFondo">-->
                 <div class="overlay-text nosotros">
                     <p>En el corazón de cada plato de pasta que elaboramos en Nono Ravioli, hay una historia que comienza hace más de cinco décadas, en la cocina de una pequeña casa familiar. Fue allí donde Giuseppe “Nono” Ravioli, un inmigrante italiano con manos curtidas por el trabajo y alma llena de recetas heredadas, comenzó a dar forma a lo que hoy es una tradición que sigue viva.</p>
 

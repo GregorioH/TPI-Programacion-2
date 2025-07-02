@@ -5,22 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nono Ravioli - Home</title>
-    <link rel="stylesheet" href="../styles/normalize.css">
-    <link rel="icon" href="../img/nonoravioli.ico">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/normalize.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/nonoravioli.ico') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Condensed:wght@100..900&display=swap"
         rel="stylesheet">
-    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/styles.css">
+    <script src="{{url_for('static', filename = 'scriptPost.js')}}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link href="{{url_for('static', filename = 'styles.css')}}" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="logo-nombre">
             <div class="logo">
-                <img src="../img/NonoRavioli.png">
+                <img src="{{ url_for('static', filename='img/NonoRavioli.png') }}">
             </div>
 
             <div class="titulo">
@@ -29,15 +30,15 @@
             </div>
         </div>
 
-        <div class="container ">
-            <nav class="nav">
+        <div class="container">
+            <nav class="nav">   
                 <ul class="lista-horiz">
                     <li><a href="#">Inicio</a></li>
-                    <li><a href="./nuestraHistoria.html">Nuestra Historia</a></li>
-                    <li><a href="./nuestrosProductos.html">Nuestros Productos</a></li>
-                    <li><a href="./tienda.html">Tienda</a></li>
-                    <li><a href="./sucursales.html">Sucursales</a></li>
-                    <li><a href="{{ url_for('mostrar_formulario') }}">¿Queres trabajar con nosotros?</a></li>
+                    <li><a href="{{url_for('mostrar_historia')}}">Nuestra Historia</a></li>
+                    <li><a href="{{url_for('mostrar_productos')}}">Nuestros Productos</a></li>
+                     <li><a href="{{url_for('mostrar_tienda')}}">Tienda</a></li>
+                    <li><a href="{{url_for('mostrar_sucursales')}}">Sucursales</a></li>
+                    <li><a href="{{url_for('mostrar_formulario')}}">¿Queres trabajar con nosotros?</a></li>
                 </ul>
             </nav>
         </div>
@@ -46,17 +47,15 @@
     <main class="container">
         <div class="slider">
             <div class="list">
+                <div class="item" style="--position: 1"><img src="{{ url_for('static', filename='img/promoraviol.png') }}"></div>
+                <div class="item" style="--position: 2"><img src="{{ url_for('static', filename='img/malbec.png') }}"></div>
+                <div class="item" style="--position: 3"><img src="{{ url_for('static', filename='img/promofideo.png') }}"></div>
+                <div class="item" style="--position: 4"><img src="{{ url_for('static', filename='img/comerrico.png') }}"></div>
 
-                <div class="item" style="--position: 1"><img src="../img/promoraviol.png"></div>
-                <div class="item" style="--position: 2"><img src="../img/malbec.png"></div>
-                <div class="item" style="--position: 3"><img src="../img/promofideo.png"></div>
-                <div class="item" style="--position: 4"><img src="../img/comerrico.png"></div>
-
-                <div class="item" style="--position: 1"><img src="../img/promoraviol.png"></div>
-                <div class="item" style="--position: 2"><img src="../img/malbec.png"></div>
-                <div class="item" style="--position: 3"><img src="../img/promofideo.png"></div>
-                <div class="item" style="--position: 4"><img src="../img/comerrico.png"></div>
-            </div>
+                <div class="item" style="--position: 1"><img src="{{ url_for('static', filename='img/promoraviol.png') }}"></div>
+                <div class="item" style="--position: 2"><img src="{{ url_for('static', filename='img/malbec.png') }}"></div>
+                <div class="item" style="--position: 3"><img src="{{ url_for('static', filename='img/promofideo.png') }}"></div>
+                <div class="item" style="--position: 4"><img src="{{ url_for('static', filename='img/comerrico.png') }}"></div>
         </div>
     </main>
 

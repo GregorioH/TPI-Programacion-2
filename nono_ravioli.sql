@@ -3,6 +3,9 @@
 -- Host: 127.0.0.1    Database: nono_ravioli
 -- ------------------------------------------------------
 -- Server version	8.0.41
+CREATE DATABASE nono_ravioli;
+USE nono_ravioli;
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -61,7 +64,7 @@ CREATE TABLE `postulacion` (
   `genero` varchar(45) NOT NULL,
   `telefono` varchar(12) DEFAULT NULL,
   `mail` varchar(45) DEFAULT NULL,
-  `texto` varchar(255) DEFAULT NULL,
+  `solicitud` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id_postulaciones`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -143,3 +146,6 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2025-07-01 19:34:07
+
+
+SELECT * FROM postulacion;

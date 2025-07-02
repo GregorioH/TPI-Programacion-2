@@ -239,6 +239,10 @@ header {
 
 /*NUESTRA HISTORIA*/
 .imagenNosotros {
+    /* background-image: url("/static/img/inmigrante.jpg"); */
+    background-image: url("img/inmigrante.jpg");
+    background-size: cover;
+    background-position: center;
     position: relative;
     display: inline-block;
     width: 100%;
@@ -261,7 +265,7 @@ header {
     font-size: 2rem;
     font-family: pacifico;
     background-color: rgba(0, 0, 0, 0.6);
-    /* fondo semitransparente */
+
     padding: 2rem;
     border-radius: 1rem;
     max-width: 90%;
@@ -280,7 +284,6 @@ header {
 
 .producto img:hover {
     transform: scale(1.2);
-
 }
 
 .productos-flex p {

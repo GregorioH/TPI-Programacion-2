@@ -4,23 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nono Ravioli - Home</title>
-    <link rel="stylesheet" href="../styles/normalize.css">
-    <link rel="icon" href="../img/nonoravioli.ico">
+    <title>Nono Ravioli - Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/normalize.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/nonoravioli.ico') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Condensed:wght@100..900&display=swap"
         rel="stylesheet">
-    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/styles.css">
+    <script src="{{url_for('static', filename = 'scriptPost.js')}}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link href="{{url_for('static', filename = 'styles.css')}}" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="logo-nombre">
             <div class="logo">
-                <img src="../img/NonoRavioli.png">
+                <img src="{{ url_for('static', filename='img/NonoRavioli.png') }}">
             </div>
 
             <div class="titulo">
@@ -32,12 +33,12 @@
         <div class="container ">
             <nav class="nav">
                 <ul class="lista-horiz">
-                    <li><a href="./index.html">Inicio</a></li>
-                    <li><a href="./nuestraHistoria.html">Nuestra Historia</a></li>
-                    <li><a href="#">Nuestros Productos</a></li>
-                    <li><a href="./tienda.html">Tienda</a></li>
-                    <li><a href="./sucursales.html">Sucursales</a></li>
-                    <li><a href="./postulacion.html">¿Queres trabajar con nosotros?</a></li>
+                    <li><a href="{{url_for('mostrar_index') }}">Inicio</a></li>
+                    <li><a href="{{url_for('mostrar_historia') }}">Nuestra Historia</a></li>
+                    <li><a href="{{url_for('mostrar_productos') }}">Nuestros Productos</a></li>
+                    <li><a href="{{url_for('mostrar_tienda') }}">Tienda</a></li>
+                    <li><a href="{{url_for('mostrar_sucursales') }}">Sucursales</a></li>
+                    <li><a href="{{url_for('mostrar_formulario') }}">¿Queres trabajar con nosotros?</a></li>
                 </ul>
             </nav>
         </div>
@@ -53,21 +54,21 @@
                     <p>Tallarines</p>
                 </div>
                 <div class="producto">
-                    <img src="../img/pastasecalarga.jpg" alt="Tallarines">
+                    <img src="{{ url_for('static', filename='img/pastasecalarga.jpg') }}" alt="Tallarines">
                 </div>
 
                 <div>
                     <p>Fideos moño</p>
                 </div>
                 <div class="producto">
-                    <img src="../img/fideosmonio.jpg" alt="Tallarines">
+                    <img src="{{ url_for('static', filename='img/fideosmonio.jpg') }}" alt="Moño">
                 </div>
 
                 <div>
                     <p>Fideos tirabuzon</p>
                 </div>
                 <div class="producto">
-                    <img src="../img/fideotirabuzon.jpg" alt="Tallarines">
+                    <img src="{{ url_for('static', filename='img/fideotirabuzon.jpg') }}" alt="Tirabuzon">
                 </div>
             </div>
             <div>
@@ -76,21 +77,21 @@
                     <p>Ravioles</p>
                 </div>
                 <div class="producto">
-                    <img src="../img/ravioles.jpg" alt="Tallarines">
+                    <img src="{{ url_for('static', filename='img/ravioles.jpg') }}" alt="Ravioles">
                 </div>
 
                 <div>
                     <p>Sorrentinos</p>
                 </div>
                 <div class="producto">
-                    <img src="../img/sorrentinos.jpg" alt="Tallarines">
+                    <img src="{{ url_for('static', filename='img/sorrentinos.jpg') }}" alt="Sorrentinos">
                 </div>
 
                 <div>
                     <p>Canelones</p>
                 </div>
                 <div class="producto">
-                    <img src="../img/canelones.jpg" alt="Tallarines">
+                    <img src="{{ url_for('static', filename='img/canelones.jpg') }}" alt="Canelones">
                 </div>
             </div>
         </div>

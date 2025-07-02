@@ -4,23 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nono Ravioli - Home</title>
-    <link rel="stylesheet" href="../styles/normalize.css">
-    <link rel="icon" href="../img/nonoravioli.ico">
+    <title>Nono Ravioli - Postulaciones</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/normalize.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/nonoravioli.ico') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Condensed:wght@100..900&display=swap"
         rel="stylesheet">
-    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/styles.css">
+    <script src="{{url_for('static', filename = 'scriptPost.js')}}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link href="{{url_for('static', filename = 'styles.css')}}" rel="stylesheet">
 </head>
 
 <body>
-<header>
+    <header>
         <div class="logo-nombre">
             <div class="logo">
-                <img src="../img/NonoRavioli.png">
+                <img src="{{ url_for('static', filename='img/NonoRavioli.png') }}">
             </div>
 
             <div class="titulo">
@@ -32,12 +33,12 @@
         <div class="container ">
             <nav class="nav">
                 <ul class="lista-horiz">
-                    <li><a href="./index.html">Inicio</a></li>
-                    <li><a href="./nuestraHistoria.html">Nuestra Historia</a></li>
-                    <li><a href="./nuestrosProductos.html">Nuestros Productos</a></li>
-                    <li><a href="./tienda.html">Tienda</a></li>
-                    <li><a href="./sucursales.html">Sucursales</a></li>
-                    <li><a href="{{ url_for('mostrar_formulario') }}">¿Queres trabajar con nosotros?</a></li>
+                    <li><a href="{{url_for('mostrar_index') }}">Inicio</a></li>
+                    <li><a href="{{url_for('mostrar_historia') }}">Nuestra Historia</a></li>
+                    <li><a href="{{url_for('mostrar_productos') }}">Nuestros Productos</a></li>
+                    <li><a href="{{url_for('mostrar_tienda') }}">Tienda</a></li>
+                    <li><a href="{{url_for('mostrar_sucursales') }}">Sucursales</a></li>
+                    <li><a href="#">¿Queres trabajar con nosotros?</a></li>
                 </ul>
             </nav>
         </div>
@@ -45,7 +46,7 @@
 
     <!-- <div class="container mt-5"> -->
 
-    <form action="/postulacion" method="post" enctype="multipart/form-data" class="form" id="formPostulacion">
+    <form  method="POST" action="/postulacion"  enctype="multipart/form-data" class="form" id="formPostulacion">
         <div class="overlay-text">
             <div class="nombre-apellido">
 
@@ -65,7 +66,7 @@
 
             <div class="mb-3">
                 <label for="genero" class="form-label">Género</label>
-                <select class="form-select" id="genero" aria-label="Seleccionar genero">
+                <select  name="genero"  class="form-select" id="genero" aria-label="Seleccionar genero">
                     <option value="" selected disabled hidden>Selecciona una opción</option>
                     <option value="masculino">Masculino</option>
                     <option value="femenino">Femenino</option>
@@ -87,7 +88,7 @@
                     <input type="radio" name="metodoContacto" id="metodoM" value="mail" class="radio-control">
                     Mail
                 </label>
-                
+
 
                 <div class="error" id="metodo-error"></div>
             </div>
@@ -108,7 +109,7 @@
 
             <div class="mb-3">
                 <label for="solicitudArea" class="form-label">Solicitud</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" autocomplete="off"
+                <textarea class="form-control" name="solicitud" id="exampleFormControlTextarea1"  rows="10" autocomplete="off"
                     placeholder="Días para contarnos, horarios de contacto, etc."></textarea>
                 <div class="error" id="soli-error"></div>
             </div>
